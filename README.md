@@ -1,0 +1,2 @@
+# my-vimrc
+Emacs sucks
