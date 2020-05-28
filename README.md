@@ -1,2 +1,2 @@
 # my-vimrc
-Emacs sucks
+Vim > Emacs
