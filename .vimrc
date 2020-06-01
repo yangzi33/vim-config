@@ -16,7 +16,7 @@ set incsearch
 set backspace=indent,eol,start
 
 set colorcolumn=80
-highlight ColorColumn ctermbg=0
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
@@ -28,11 +28,15 @@ Plug 'vim-utils/vim-man'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'kien/ctrlp.vim'
 Plug 'mbbill/undotree'
+Plug 'arzg/vim-colors-xcode'
+Plug 'xuhdev/vim-latex-live-preview'
+Plug 'lervag/vimtex'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
-"colorscheme gruvbox"
-"set background=dark"
+colorscheme xcodedarkhc
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -52,11 +56,19 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :Undotreeshow<CR>
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>
+"nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>"
+nnoremap <leader>pv :NERDTreeToggle<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
-
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter Fixit<CR>
+
+" Configuration for vim-latex-preview "
+
+"autocmd Filetype tex setl updatetime=1
+"let g:livepreview_previewer = 'open -a okular'
+
+" Configuration for NERDTree "
+autocmd vimenter * NERDTree
