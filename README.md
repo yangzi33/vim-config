@@ -1,2 +1,1 @@
 # my-vimrc
-Vim > Emacs
