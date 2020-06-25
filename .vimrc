@@ -36,7 +36,10 @@ Plug 'tpope/vim-commentary'
 
 call plug#end()
 
-colorscheme xcodedarkhc
+colorscheme gruvbox
+set bg=dark
+
+"colorscheme xcodedarkhc
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -71,4 +74,5 @@ nnoremap <silent> <Leader>gf :YcmCompleter Fixit<CR>
 "let g:livepreview_previewer = 'open -a okular'
 
 " Configuration for NERDTree "
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
+
