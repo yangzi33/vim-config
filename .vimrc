@@ -25,11 +25,11 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
-Plug 'ycm-core/YouCompleteMe'
+" Running installation file is required for YCM
+Plug 'ycm-core/YouCompleteMe'"
 Plug 'kien/ctrlp.vim'
 Plug 'mbbill/undotree'
 Plug 'arzg/vim-colors-xcode'
-Plug 'xuhdev/vim-latex-live-preview'
 Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
