@@ -1,10 +1,10 @@
 syntax on
 
 set noerrorbells
-set tabstop=4 softtabstop=4
+set tabstop=3 softtabstop=4 
 set shiftwidth=4
-set expandtab
 set smartindent
+set expandtab
 set nu
 set nowrap
 set smartcase
@@ -25,21 +25,23 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
-" Running installation file is required for YCM
-Plug 'ycm-core/YouCompleteMe'"
+Plug 'ycm-core/YouCompleteMe'
 Plug 'kien/ctrlp.vim'
 Plug 'mbbill/undotree'
 Plug 'arzg/vim-colors-xcode'
 Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
+Plug 'cocopon/iceberg.vim'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
 colorscheme gruvbox
-set bg=dark
 
-"colorscheme xcodedarkhc
+"colorscheme iceberg
+
+"colorscheme xcodedark
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -76,3 +78,24 @@ nnoremap <silent> <Leader>gf :YcmCompleter Fixit<CR>
 " Configuration for NERDTree "
 "autocmd vimenter * NERDTree
 
+" Configuration for Vim-LaTeX/LaTeX-Suite
+"-----
+"" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+""-----
+
+" Set Hybrid Line Number
+:set number relativenumber
+:set nu rnu
