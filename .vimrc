@@ -37,6 +37,8 @@ Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
+set bg="light"
+let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
 
 "colorscheme iceberg
@@ -99,3 +101,7 @@ let g:tex_flavor='latex'
 " Set Hybrid Line Number
 :set number relativenumber
 :set nu rnu
+
+" Set Relative Line Number for nerd tree
+let NERDTreeToggleShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
