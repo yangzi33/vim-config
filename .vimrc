@@ -20,9 +20,12 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
+"UI Plugins
 Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
+Plug 'altercation/vim-colors-solarized'
+
+"Plug 'jremmen/vim-ripgrep'
+"Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'ycm-core/YouCompleteMe'
@@ -34,29 +37,37 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'cocopon/iceberg.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'sainnhe/gruvbox-material'
 
 call plug#end()
 
-set bg="light"
-let g:gruvbox_contrast_light='hard'
-colorscheme gruvbox
+"Configuring color scheme
+"set termguicolors
 
-"colorscheme iceberg
 
-"colorscheme xcodedark
+"Gruvbox Config
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_contrast_light='hard'
+"set background=light
+"colorscheme gruvbox
+
+let g:solarized_visibility='low'
+set background=light
+colorscheme solarized
+
 
 if executable('rg')
     let g:rg_derive_root='true'
 endif
 
-let g:ctrlp_user_command = ['.git/'. 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let mapleader = " "
+let g:ctrlp_user_command=['.git/'. 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let mapleader=" "
 let g:netrw_browse_split=2
 let g:netrw_banner=0
-let g:netrw_winsize = 25
+let g:netrw_winsize=25
 
 " ag is fast such that CtrlP does not need to cache "
-let g:ctrlp_use_caching = 0
+let g:ctrlp_use_caching=0
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
